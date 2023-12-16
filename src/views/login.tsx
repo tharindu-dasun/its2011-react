@@ -1,26 +1,51 @@
-import React from "react";
+import React from 'react';
+import {Link} from 'react-router-dom';
+import Input from "./../component/input/input";
 
-class Login extends React.Component<any, any>{
+class Login extends React.Component<any, any> {
+
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | Iterable<React.ReactNode> | React.ReactPortal | boolean | any | null | undefined {
         return(
-            <section>
-                <div>
-                    <img src="https://logodix.com/logo/1597040.png" title="logo" alt="logo" className={'w-24'}/>
+            <section className={'flex justify-center items-center p-5'}>
+                <div className={'w-fit p-24 border shadow-xl rounded-xl'}>
 
-                    <div>
-                        <label htmlFor="email">Email<span className="text-red-600">*</span></label>
-                        <input type="email" id="email" placeholder="Enter Your Email" className={'block border border-green-300 outline-none focus:border-green-600'}/>
+                    <img src="https://logodix.com/logo/1597040.png" title="logo" alt="logo" className={'w-24 m-auto'}/>
+
+                    <div className={'text-2xl font-bold text-green-600 text-center mt-5'}>
+                        Sign In
                     </div>
 
-                    <div>
-                        <label htmlFor="password">Email<span className="text-red-600">Password</span></label>
-                        <input type="password" id="password" placeholder="Enter Your Password" className={'block border border-green-300 outline-none focus:border-green-600'}/>
+                    <div className={'mt-5 min-w-[300px]'}>
+
+                        <Input
+                            type={'email'}
+                            name={'email'}
+                            label={'Email'}
+                            placeholder={'Enter your email'}
+                            optional={false}/>
+
+                        <Input
+                            type={'password'}
+                            name={'password'}
+                            label={'Password'}
+                            placeholder={'Enter your password'}
+                            optional={false}/>
+
+                    </div>
+
+                    <div className={'text-center mt-5'}>
+                        <button className={'bg-green-600 text-white px-5 py-3 hover:bg-green-400'}>Sign In</button>
+                    </div>
+
+                    <div className={'text-center mt-5'}>
+                        Do not have an account? <Link to={'/signup'}><span className={'text-blue-600 underline'}>Sign up now</span></Link>
                     </div>
 
                 </div>
             </section>
-        )
+        );
     }
+
 }
 
-export default Login
+export default Login;
