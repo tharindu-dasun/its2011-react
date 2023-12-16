@@ -21,6 +21,30 @@ class App extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {count: 0}
+        console.log('Constructor  1');
+    }
+
+    static getDerivedStateFromProps(Props , State){
+        console.log('getDerivedStateFromProps  2');
+        return null;
+    }
+
+    componentDidMount(): void {
+        console.log('componentDidMount  3');
+    }
+
+    shouldComponentUpdate(nextProps: Readonly<Props>, nextState: Readonly<State>, nextContext: any): boolean {
+        console.log('Should componentDidUpdate  4');
+        return true;
+    }
+
+    getSnapshotBeforeUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>): any {
+        console.log('Snap Shot  5');
+        return null;
+    }
+
+    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any) {
+        console.log('Component Did Update  6');
     }
 
     up = () => {
