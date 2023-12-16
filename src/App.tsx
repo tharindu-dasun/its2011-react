@@ -3,6 +3,8 @@ import Card from "./component/card/card";
 import Header from "./component/layout/header";
 import Footer from "./component/layout/footer";
 import Home from "./views/home";
+import Login from "./views/login";
+
 
 interface Props {
 }
@@ -25,22 +27,24 @@ class App extends React.Component<Props, State> {
         return (
             <div>
 
-                {/*<Header/>*/}
+                <Header/>
 
                 {/*<Home/>*/}
 
-                <div className={'text-center m-5'}>
-                    <div className={'text-2xl font-bold'}>{this.state.count}</div>
-                    <br/>
-                    <button className={'bg-green-600 text-white p-5'} onClick={this.up}>Click</button>
-                </div>
+                {/*<div className={'text-center m-5'}>*/}
+                {/*    <div className={'text-2xl font-bold'}>{this.state.count}</div>*/}
+                {/*    <br/>*/}
+                {/*    <button className={'bg-green-600 text-white p-5'} onClick={this.up}>Click</button>*/}
+                {/*</div>*/}
 
-                {
-                    this.state.count > 0 ? null : <Card title={"hi"} content={"hhhhhhhhhhhhhhhhhhhh"}/>
-                }
+                {/*{*/}
+                {/*    this.state.count > 0 ? null : <Card title={"hi"} content={"hhhhhhhhhhhhhhhhhhhh"}/>*/}
+                {/*}*/}
+
+                <Login/>
 
 
-                {/*<Footer/>*/}
+                <Footer/>
 
             </div>
         );
